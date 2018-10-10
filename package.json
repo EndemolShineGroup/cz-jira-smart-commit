@@ -1,7 +1,7 @@
 {
   "name": "@endemolshinegroup/cz-jira-smart-commit",
   "description": "A Commitizen adapter for JIRA smart commits",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
