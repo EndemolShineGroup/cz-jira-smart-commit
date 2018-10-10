@@ -1,4 +1,4 @@
-import gitBranchName from 'git-branch';
+import gitBranch from 'git-branch';
 import { Questions } from 'inquirer';
 import _ from 'lodash';
 
@@ -22,7 +22,7 @@ export default ({ config, pkg }: CreatePrompts): Questions => {
 
   return [
     {
-      default: formatGitBranchName(gitBranchName.sync()),
+      default: formatGitBranchName(gitBranch.sync()),
       message:
         'JIRA Issue ID(s) (comma/space separated, default is branch name):',
       name: 'issues',

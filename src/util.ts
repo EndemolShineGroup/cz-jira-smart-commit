@@ -27,11 +27,11 @@ export function findLongest(strings: string[]): number {
   );
 }
 
-export function formatGitBranchName(branchName: string) {
+export function formatGitBranchName(branchName: string = '') {
   return branchName
     .replace('feature/', '') // Get rid of `feature/` prefix
     .replace('fix/', '') // Get rid of `fix/` prefix
-    .toLocaleUpperCase(); // Uppercase issues
+    .toLocaleUpperCase(); // Uppercase issue IDs
 }
 
 // Look for `.czrc` and require it
