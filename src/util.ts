@@ -20,8 +20,6 @@ export function addEOL(message: string) {
 }
 
 export function findLongest(strings: string[]): number {
-  // const keys = Object.keys(object);
-
   return (
     max(
       map(strings, (key) => {
@@ -39,17 +37,12 @@ export function formatGitBranchName(branchName: string) {
 }
 
 // Look for `.czrc` and require it
-export function loadConfig(projectPath: string = process.cwd()) {
+export function loadConfig(
+  projectPath: string = process.cwd(),
+): CommitizenConfig {
   const configPath = path.join(projectPath, '.czrc');
-  try {
-    const file = fs.readFileSync(configPath);
-    return JSON.parse(file.toString('utf8'));
-  } catch (error) {
-    // tslint:disable-next-line:no-console
-    console.error(
-      `Could not load project's Commitizen configuration from ${configPath}.`,
-    );
-  }
+  const file = fs.readFileSync(configPath);
+  return JSON.parse(file.toString('utf8'));
 }
 
 export function createCommitTypeChoices() {

@@ -32,7 +32,15 @@ describe('#findLongest', () => {
 });
 
 describe('#loadConfig', () => {
-  it('loads a Commitizen config file', () => {
+  it('loads a Commitizen config file from the current working directory', () => {
+    process.chdir(path.join(__dirname, '..'));
+    const result = loadConfig();
+    expect(result).toEqual({
+      path: '@commitlint/prompt',
+    });
+  });
+
+  it('loads a Commitizen config file from a given path', () => {
     const result = loadConfig(path.join(__dirname, '..'));
     expect(result).toEqual({
       path: '@commitlint/prompt',

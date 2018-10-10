@@ -3,7 +3,6 @@ import os from 'os';
 import formatCommit from './formatCommit';
 
 describe('#formatCommit', () => {
-  // const message = 'sample commit message';
   const issues = 'CZ-234 CZ-235';
   const workflow = 'done';
   const subject = 'This took waaaaay too long';
@@ -61,17 +60,12 @@ describe('#formatCommit', () => {
     expect(result).toEqual(message);
   });
 
-  // it('should not commit without a workflow', () => {
-  //   expect(const result = formatCommit((result) => {
-  //     return result;
-  //   }, {issues, type, subject})).to.throw(new Error('A workflow must be defined'));
-  //   // const result = formatCommit((result) => {
-  //   //   expect(result).to.throw(new Error('A workflow must be defined'));
-  //   // }, {issues, type, subject});
-  // });
-  // // it('should commit without a subject', () => {
-  // //   const result = formatCommit((result) => {
-  // //     expect(result).toEqual('CZ-234 CZ-235 #done')
-  // //   }, {issues, workflow});
-  // // });
+  it('should use the defaults if type and/or workflow are not defined', () => {
+    const result = formatCommit({ issues, subject });
+    const message = [
+      'feat: This took waaaaay too long',
+      'CZ-234 CZ-235 #in-progress',
+    ].join(os.EOL + os.EOL);
+    expect(result).toEqual(message);
+  });
 });
