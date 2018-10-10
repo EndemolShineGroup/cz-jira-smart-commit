@@ -1,0 +1,51 @@
+language: node_js
+
+cache: yarn
+
+node_js:
+  - 8
+  - 10
+
+before_install:
+  - npm i -g yarn
+
+script:
+  - yarn build
+  - yarn test
+
+notifications:
+  slack:
+    secure: scBc9U0jZyJNpxAoRb/b/vmFjOjnWuuv+eSLjkUhja3cD90DRnldgA0CmRZTc8yY+UZLlTXctl7HxrSDuli2IFM/0Sd/5NpwGoiu+YxWcN3ax4aq1Y8gDbAkeMSkWtKP30RXakjv8JEMbW0s5Ar2bQ2YUp0tLRJqigaJBlX8GZ/17/LiuBiECz7eVAaZojjRQy4LIvmo1iQs1b95wb2erjq4Ag8f02vpl24d0wdIqwLabzj9HNX+5EeD9wVCVibqVsfbKXDOJBGa2w7kpTz3Ix70/6bDiuykEmDOIUkTi2sTuymrw2HzkebxKZ/Wty9zxM7+oPqykd/wF/Fqd+rM5cV3FQXYi9fgDhYkPelEgZ0SGJJ3pBoy8o4dTuHIUP2fObVA0lcsshhhH+vO0QRTq8KeJFtA+d0ycRye0PRMW1Gdv4a5Xd6Ax4inPteXeKFkd4L9NSAaCFketIcjmxjxxHK5ph2ELQGTteOS0ehdBpeYQAZkxT/kxi14RJZ70WrVQAaUNBzDMdswUzzOjm4atmksTSJPAQ1eXDKjP5cNxks25v0c+7fpK/a5zbQ66y73E1sEXGlyjqi6RejFETgq3lOi15T9/AAMqRo6VLIXGbv+JOr9R/nUVPllWmv0FEZWWfUqDlEPaJUThvCmHNWs6EszdYFhff72t5NzFb8aDt4=
+
+env:
+  global:
+    - secure: 6zokWAur+oNaEfGWtlPgPu9qiiL8+GeZORTPJCkPSUaoVM8zBSTksLue3/NzuR9iAZohubrS1Mzn0xxMymUgUPwWDTGXwt/1kNnxigyuijq72Anukx3aGQ8/ZGpLcidiCGUvuyko673Q6WLbZdR+6hBTnoF8Daas/+C6CTCBfBN/IacVotfU27Wn0AObQw7P8WffAh70ukdhaFzGWZSpM0rTXyQ032wEJFr4apQ4irWoPk28g4AaXPOKLVU94xHQPvsjpI2b8BuF0wUOJJ5yKnHWSo5LTOO5S5F2TwwSTaIl2tj16rEXbuiMkWQ/9Mc44dqwvqP2KZy16x72y7uNvOr6w9gCB9lgDkhfFQ8Xe/X96qob6jidjMCVi39ghhK9GfCCHSHsK4mQzwCf0MOZlYlqbdu7KHHF7Ac11glG5j2tppdlnPRXaTG2kEANr1WUllXF6fqg+p21mGhCoEhEfPsKg4k7BPCiasL67MkDJ2E3cIk+VgJP70eYGSYmsL/vthPXCMtp+dALb17KFONTTEapODRLReUUAqA0Z4txIkLw6gcWJi+ym6YSOadjGu+Gw4LXCwkDRlE4WGI/RWKIXFoFJVrynQ87Se/uy93Z7di27Nhi6y61hCiGVom9rxz5HqgCYOuktnMOzt47yzx+G4hOX+b4y+WeUGrEU22VTbo=
+    - secure: E5rXYqSn7sx0PMHVXMv0DS0qMYOSORx/NcTqNNJw57jwT8BV9gOXqlSdiq5h5Ffm7qkNzQufRGAKkSVCha6vne3/0vwQ39Mc5VV7QYp57JL1RkkBklc6o2UBmOAAbhRFmnuw3JMbsKvRI/wS0JsSw6syKDO+S2dJ80wSYOSRCfaJHQDnPMw/PoTA5pRztKOV8fFHzC6NaqfR91z/oU6Th3sdFooSblTzz48LWaJwtmeRcDIpYjsK/wIKWTb58H9P+ESE0BYvEbRm+X/MTOsMR3nwHglwVykFIfSP0bfRy31c5dFxcwOkAmTuTzic08go2wr9iAQKnusbWBKVosYxHoZXwf+zAUylE7vK5LvTgCiD6iNAu9L6aap7D0x1b4Py0yUSMrxlsGOAYwMO/6j/lJLAadSo+bD2Z3ZhIsDceTUXNYDflt0GYm23KXGqG7cbitaI8jL5bYybRJzi3xOFGPrnzM0SNFi3oKOXJNLjVQQ2SXS1rCSOtwkoEkieYoimB0HwdzPRJNogrNUgYD+E00UUkSbpBINkW+SIT2Yt1PfsA1uMqSwJaTo0dqt2vYU3eP3m0eDBpTz3gRPQdjk6juR19GJr6pXJkZ1bUW17VktzctU9Z0cmlM5Iip3Womg+EPJHZxNNdcQhPYCfOSD1oElI2kRXHH6kbz40S50QVr4=
+    - secure: cRpbmsuy/MehKKPhAXmpQ5KhC+TmKY5qtawdTe4mRIgYBxPh06Pt8gtACBCjTxksVddbQ+v0yimkZ9+1THyJ5MZNaLkVj7r9uKILoyBAxr03E3MfnpmB/H/v/0+Oz2v4MtIXVmzUfcmx4GLKhh1NX/oPxvSqQEQHft39hRi2OB6UaFFGK57SYKHUcKhUdJhkTcgoWNNyqyn7XPW7ng7BOJDpEZIEN8ysQUjBcCYqR4vmVvEN26r/aHSXP4dkbd3ZtC9Hs21+UBlQUdKk3oaf3Ah2mh2inGzS0KKypcSiter6i/zQxblftw1NUH7Xm1jojT5S/zuCZmsL/1jYk1svYW2DPwxuS8vBz+uU4L9Hb9HDi2HKWwzzSj27xZYQjle5VaXagD3BtTDtkDyEKHfb16j0r/fqqzbl5Jpk6OFDWh4smb4j6e8jiMQhIT3x+ISqXwaeudRRF38OnJPqob+P4mFnw/T78egoHT56gYoCtaWNQVKyDUyraS3jB5JJnTNODnMaTEArncvARQOLE8AFXo/eyqdUsnZiLrgwFEgEOrwypxT/dWvOdsOH8qVg4lwKo8osAfRhlF5gBELFItzae3mNjTNQ3g+Nw0JAlvt0b6LWTN/wf3p+ph8v7HIz8WtN3tUnNlxCanf9xOAZ4l+s2MB8z6qvPkXHWULtxOVcAOw=
+    - export GIT_AUTHOR_NAME="EndemolShineGroupUser"
+    - export GIT_AUTHOR_EMAIL="tech@endemolshine.com"
+    - export GIT_COMMITTER_NAME="EndemolShineGroupUser"
+    - export GIT_COMMITTER_EMAIL="tech@endemolshine.com"
+
+jobs:
+  include:
+    - stage: coverage
+      if: type != pull_request
+      before_script:
+        - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        - chmod +x ./cc-test-reporter
+        - ./cc-test-reporter before-build
+      after_script:
+        - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+      after_success:
+        - yarn global add codecov
+        - codecov
+    - stage: release
+      if: branch = master AND type != pull_request
+      after_success:
+        - yarn semantic-release
+        - git clone https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
+        - cd $TRAVIS_REPO_SLUG
+        - git fetch --all
+        - git merge origin/master
+        - git push
