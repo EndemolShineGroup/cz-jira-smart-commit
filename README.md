@@ -16,7 +16,7 @@
 
 A Commitizen adapter for [JIRA smart commits][link-smart-commits].
 
-![Screenshot](other/screenshot.png)
+![Screenshot](docs/assets/screenshot.png)
 
 [link-smart-commits]: https://confluence.atlassian.com/display/FISHEYE/Using+smart+commits
 
