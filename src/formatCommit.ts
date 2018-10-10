@@ -1,7 +1,7 @@
 import os from 'os';
 
 import { Answers } from 'inquirer';
-import _ from 'lodash';
+import compact from 'lodash.compact';
 import wrap from 'word-wrap';
 
 export default function formatCommit(answers: Answers) {
@@ -33,7 +33,7 @@ export default function formatCommit(answers: Answers) {
   // JIRA issues and workflow
   const commitFooter = `${issues} #${workflow}`;
 
-  const message = _.compact([commitHeader, commitBody, commitFooter]);
+  const message = compact([commitHeader, commitBody, commitFooter]);
 
   return message.join(os.EOL + os.EOL);
 }

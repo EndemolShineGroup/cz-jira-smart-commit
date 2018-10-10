@@ -37,8 +37,12 @@
   "dependencies": {
     "conventional-commit-types": "^2.2.0",
     "git-branch": "^2.0.1",
-    "lodash": "^4.17.11",
+    "lodash.compact": "^3.0.1",
+    "lodash.get": "^4.4.2",
     "lodash.has": "^4.5.2",
+    "lodash.map": "^4.6.0",
+    "lodash.max": "^4.0.1",
+    "lodash.padend": "^4.6.1",
     "word-wrap": "^1.2.3"
   },
   "devDependencies": {
@@ -52,7 +56,12 @@
     "@types/git-branch": "^2.0.0",
     "@types/inquirer": "^0.0.43",
     "@types/jest": "^23",
+    "@types/lodash.compact": "^3.0.4",
+    "@types/lodash.get": "^4.4.4",
     "@types/lodash.has": "^4.5.4",
+    "@types/lodash.map": "^4.6.13",
+    "@types/lodash.max": "^4.0.4",
+    "@types/lodash.padend": "^4.6.4",
     "@types/node": "^10",
     "commitizen": "^3.0.2",
     "husky": "^1.1.1",

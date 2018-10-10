@@ -1,6 +1,6 @@
 import gitBranch from 'git-branch';
 import { Questions } from 'inquirer';
-import _ from 'lodash';
+import has from 'lodash.has';
 
 import { CommitizenConfig, PackageJson } from './types';
 import {
@@ -18,7 +18,7 @@ interface CreatePrompts {
 }
 
 export default ({ config, pkg }: CreatePrompts): Questions => {
-  const hasUserDefinedScopes = _.has(config, `${pkg.name}.scopes`);
+  const hasUserDefinedScopes = has(config, `${pkg.name}.scopes`);
 
   return [
     {
