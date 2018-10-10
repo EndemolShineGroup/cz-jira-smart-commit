@@ -45,6 +45,11 @@ describe('#formatGitBranchName', () => {
     const result = formatGitBranchName('feature/CZ-123');
     expect(result).toEqual('CZ-123');
   });
+
+  it('handles running on Travis CI when Git is not initialised', () => {
+    const result = formatGitBranchName((null as unknown) as string);
+    expect(result).toEqual('');
+  });
 });
 
 describe('#createCommitTypeChoices', () => {

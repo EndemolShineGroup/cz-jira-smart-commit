@@ -27,8 +27,8 @@ export function findLongest(strings: string[]): number {
   );
 }
 
-export function formatGitBranchName(branchName: string = '') {
-  return branchName
+export function formatGitBranchName(branchName: string) {
+  return (branchName || '')
     .replace('feature/', '') // Get rid of `feature/` prefix
     .replace('fix/', '') // Get rid of `fix/` prefix
     .toLocaleUpperCase(); // Uppercase issue IDs
