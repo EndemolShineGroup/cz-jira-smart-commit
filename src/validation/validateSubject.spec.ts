@@ -10,7 +10,7 @@ describe('#validateSubject', () => {
       validateSubject(
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut',
       ),
-    ).toContain('Subject should be 70 or less ');
+    ).toContain('Subject should be 72 characters or less');
   });
 
   it('allows commits if subject passes all conditions', () => {
