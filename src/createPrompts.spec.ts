@@ -22,6 +22,8 @@ describe('#createPrompts', () => {
     expect(result).toHaveLength(6);
     const prompt = find(result, ['name', 'workflow']) as Question;
     expect(prompt.choices).toHaveLength(3);
+    const scopePrompt = find(result, ['name', 'scope']) as Question;
+    expect(scopePrompt.choices).toBeUndefined();
   });
 
   it('loads user-defined scopes if any are found', () => {
