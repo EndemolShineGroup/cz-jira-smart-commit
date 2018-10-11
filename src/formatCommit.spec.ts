@@ -24,12 +24,12 @@ describe('#formatCommit', () => {
       'CZ-234 CZ-235 #done',
     ].join(os.EOL + os.EOL);
     const result = formatCommit({
+      body,
       issues,
-      workflow,
-      type,
       scope,
       subject,
-      body,
+      type,
+      workflow,
     });
     expect(result).toEqual(message);
   });

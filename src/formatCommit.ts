@@ -5,27 +5,26 @@ import compact from 'lodash.compact';
 import wrap from 'word-wrap';
 
 export default function formatCommit(answers: Answers) {
-  const maxLineWidth = 80;
   const wrapOptions = {
     indent: '',
     newline: '\n',
     trim: true,
-    width: maxLineWidth,
+    width: 80,
   };
 
   const {
-    type = 'feat',
-    scope = '',
     body,
-    subject,
     issues,
+    scope,
+    subject,
+    type = 'feat',
     workflow = 'in-progress',
   } = answers;
 
   // Hard limit this line
   const commitHeader = `${type}${
     scope ? `(${scope})` : ''
-  }: ${subject.trim()}`.slice(0, maxLineWidth);
+  }: ${subject.trim()}`.slice(0, wrapOptions.width);
 
   // Wrap these lines at 100 characters
   const commitBody = wrap(body, wrapOptions);

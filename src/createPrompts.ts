@@ -1,5 +1,6 @@
 import gitBranch from 'git-branch';
 import { Questions } from 'inquirer';
+import get from 'lodash.get';
 import has from 'lodash.has';
 
 import { CommitizenConfig, PackageJson } from './types';
@@ -18,7 +19,13 @@ interface CreatePrompts {
 }
 
 export default ({ config, pkg }: CreatePrompts): Questions => {
+  const isPullRequestsOnly = get(config, `${pkg.name}.pullRequestsOnly`, false);
   const hasUserDefinedScopes = has(config, `${pkg.name}.scopes`);
+
+  const workflowChoices = ['in-progress', 'in-review'];
+  if (!isPullRequestsOnly) {
+    workflowChoices.push('done');
+  }
 
   return [
     {
@@ -30,7 +37,7 @@ export default ({ config, pkg }: CreatePrompts): Questions => {
       validate: validateIssues,
     },
     {
-      choices: ['in-progress', 'in-review', 'done'],
+      choices: workflowChoices,
       default: 'in-progress',
       message: 'Workflow command:',
       name: 'workflow',

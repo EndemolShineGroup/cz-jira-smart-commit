@@ -48,7 +48,12 @@ The adapter can be customised by specifying additional options in `.czrc`:
 {
   "path": "@endemolshinegroup/cz-jira-smart-commit",
   "@endemolshinegroup/cz-jira-smart-commit": {
-    "pullRequestsOnly": true
+    "pullRequestsOnly": true,
+    "scopes": {
+      "api": "For API commits",
+      "site": "For frontend commits",
+      "docs": "For documentation commits"
+    }
   }
 }
 ```

@@ -20,7 +20,7 @@ export interface ConventionalCommitTypes {
 
 export interface AdapterConfig {
   pullRequestsOnly?: boolean;
-  scopes: {
+  scopes?: {
     [key: string]: string;
   };
 }
