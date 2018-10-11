@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/EndemolShineGroup/cz-jira-smart-commit/compare/v1.0.0...v1.1.0) (2018-10-11)
+
+
+### Features
+
+* **options:** support options set in .czrc ([a94ff90](https://github.com/EndemolShineGroup/cz-jira-smart-commit/commit/a94ff90))
+
 # 1.0.0 (2018-10-10)
 
 
