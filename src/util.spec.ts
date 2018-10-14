@@ -36,14 +36,14 @@ describe('#loadConfig', () => {
     process.chdir(path.join(__dirname, '..'));
     const result = loadConfig();
     expect(result).toEqual({
-      path: '@commitlint/prompt',
+      path: '@endemolshinegroup/cz-github',
     });
   });
 
   it('loads a Commitizen config file from a given path', () => {
     const result = loadConfig(path.join(__dirname, '..'));
     expect(result).toEqual({
-      path: '@commitlint/prompt',
+      path: '@endemolshinegroup/cz-github',
     });
   });
 });
