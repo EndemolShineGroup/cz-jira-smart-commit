@@ -1,8 +1,9 @@
 import gitBranch from 'git-branch';
-import { Answers, Questions } from 'inquirer';
+import { Questions } from 'inquirer';
 import get from 'lodash.get';
 import has from 'lodash.has';
 
+import isIssueAffected from './conditions/isIssueAffected';
 import { CommitizenConfig, PackageJson } from './types';
 import {
   addEOL,
@@ -68,9 +69,7 @@ export default ({ config, pkg }: CreatePrompts): Questions => {
       name: 'issues',
       type: 'input',
       validate: validateIssues,
-      when: (answers: Answers) => {
-        return !!answers.isIssueAffected;
-      },
+      when: isIssueAffected,
     },
     {
       choices: workflowChoices,
@@ -78,9 +77,7 @@ export default ({ config, pkg }: CreatePrompts): Questions => {
       message: 'Workflow command:',
       name: 'workflow',
       type: 'list',
-      when: (answers: Answers) => {
-        return !!answers.isIssueAffected;
-      },
+      when: isIssueAffected,
     },
   ].map((question) => {
     return {
