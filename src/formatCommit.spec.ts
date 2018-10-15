@@ -2,15 +2,7 @@ import os from 'os';
 
 import formatCommit from './formatCommit';
 
-import {
-  body,
-  formattedBody,
-  issues,
-  scope,
-  subject,
-  type,
-  workflow,
-} from './__fixtures__/commitAnswers';
+import * as FIXTURE from './__fixtures__/commitAnswers';
 
 describe('#formatCommit', () => {
   it('should be a function', () => {
@@ -20,16 +12,21 @@ describe('#formatCommit', () => {
   it('should perform a full commit', () => {
     const message = [
       'build(api): This took waaaaay too long',
-      formattedBody,
+      FIXTURE.formattedBody,
       'CZ-234 CZ-235 #done',
     ].join(os.EOL + os.EOL);
+    const result = formatCommit(FIXTURE);
+    expect(result).toEqual(message);
+  });
+
+  it('should commit without any issue IDs', () => {
+    const message = [
+      'build(api): This took waaaaay too long',
+      FIXTURE.formattedBody,
+    ].join(os.EOL + os.EOL);
     const result = formatCommit({
-      body,
-      issues,
-      scope,
-      subject,
-      type,
-      workflow,
+      ...FIXTURE,
+      isIssueAffected: false,
     });
     expect(result).toEqual(message);
   });
@@ -37,24 +34,33 @@ describe('#formatCommit', () => {
   it('should commit without a scope', () => {
     const message = [
       'build: This took waaaaay too long',
-      formattedBody,
+      FIXTURE.formattedBody,
       'CZ-234 CZ-235 #done',
     ].join(os.EOL + os.EOL);
-    const result = formatCommit({ issues, workflow, type, subject, body });
+    const result = formatCommit({
+      ...FIXTURE,
+      scope: undefined,
+    });
     expect(result).toEqual(message);
   });
 
   it('should commit without a body', () => {
     const message = [
-      'build: This took waaaaay too long',
+      'build(api): This took waaaaay too long',
       'CZ-234 CZ-235 #done',
     ].join(os.EOL + os.EOL);
-    const result = formatCommit({ issues, workflow, type, subject });
+    const result = formatCommit({
+      ...FIXTURE,
+      body: undefined,
+    });
     expect(result).toEqual(message);
   });
 
   it('should use the defaults if type and/or workflow are not defined', () => {
-    const result = formatCommit({ issues, subject });
+    const result = formatCommit({
+      issues: FIXTURE.issues,
+      subject: FIXTURE.subject,
+    });
     const message = [
       'feat: This took waaaaay too long',
       'CZ-234 CZ-235 #in-progress',

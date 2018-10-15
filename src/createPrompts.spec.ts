@@ -19,7 +19,7 @@ describe('#createPrompts', () => {
 
   it('creates valid prompts', () => {
     const result = createPrompts({ config, pkg });
-    expect(result).toHaveLength(6);
+    expect(result).toHaveLength(7);
     const prompt = find(result, ['name', 'workflow']) as Question;
     expect(prompt.choices).toHaveLength(3);
     const scopePrompt = find(result, ['name', 'scope']) as Question;
@@ -37,7 +37,7 @@ describe('#createPrompts', () => {
       },
     };
     const result = createPrompts({ config: pullRequestsConfig, pkg });
-    expect(result).toHaveLength(6);
+    expect(result).toHaveLength(7);
 
     const scopePrompt = find(result, ['name', 'scope']) as Question;
     expect(scopePrompt.choices).toHaveLength(2);
@@ -51,7 +51,7 @@ describe('#createPrompts', () => {
       },
     };
     const result = createPrompts({ config: pullRequestsConfig, pkg });
-    expect(result).toHaveLength(6);
+    expect(result).toHaveLength(7);
 
     const workflowPrompt = find(result, ['name', 'workflow']) as Question;
     expect(workflowPrompt.choices).toHaveLength(2);

@@ -1,5 +1,5 @@
 import gitBranch from 'git-branch';
-import { Questions } from 'inquirer';
+import { Answers, Questions } from 'inquirer';
 import get from 'lodash.get';
 import has from 'lodash.has';
 
@@ -29,21 +29,6 @@ export default ({ config, pkg }: CreatePrompts): Questions => {
 
   return [
     {
-      default: formatGitBranchName(gitBranch.sync()),
-      message:
-        'JIRA Issue ID(s) (comma/space separated, default is branch name):',
-      name: 'issues',
-      type: 'input',
-      validate: validateIssues,
-    },
-    {
-      choices: workflowChoices,
-      default: 'in-progress',
-      message: 'Workflow command:',
-      name: 'workflow',
-      type: 'list',
-    },
-    {
       choices: createCommitTypeChoices(),
       message: `Select the type of change that you're committing:`,
       name: 'type',
@@ -69,6 +54,33 @@ export default ({ config, pkg }: CreatePrompts): Questions => {
         'Provide a longer description of the change: (press enter to skip)',
       name: 'body',
       type: 'input',
+    },
+    {
+      default: true,
+      message: 'Does this change affect any open issues?',
+      name: 'isIssueAffected',
+      type: 'confirm',
+    },
+    {
+      default: formatGitBranchName(gitBranch.sync()),
+      message:
+        'JIRA Issue ID(s) (comma/space separated, default is branch name):',
+      name: 'issues',
+      type: 'input',
+      validate: validateIssues,
+      when: (answers: Answers) => {
+        return !!answers.isIssueAffected;
+      },
+    },
+    {
+      choices: workflowChoices,
+      default: 'in-progress',
+      message: 'Workflow command:',
+      name: 'workflow',
+      type: 'list',
+      when: (answers: Answers) => {
+        return !!answers.isIssueAffected;
+      },
     },
   ].map((question) => {
     return {

@@ -14,6 +14,7 @@ export default function formatCommit(answers: Answers) {
 
   const {
     body,
+    isIssueAffected = true,
     issues,
     scope,
     subject,
@@ -30,7 +31,7 @@ export default function formatCommit(answers: Answers) {
   const commitBody = wrap(body, wrapOptions);
 
   // JIRA issues and workflow
-  const commitFooter = `${issues} #${workflow}`;
+  const commitFooter = isIssueAffected ? `${issues} #${workflow}` : '';
 
   const message = compact([commitHeader, commitBody, commitFooter]);
 
