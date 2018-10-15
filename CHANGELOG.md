@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/EndemolShineGroup/cz-jira-smart-commit/compare/v1.1.0...v1.2.0) (2018-10-15)
+
+
+### Bug Fixes
+
+* **validation:** use subject length of 72 correctly ([c9f4af3](https://github.com/EndemolShineGroup/cz-jira-smart-commit/commit/c9f4af3))
+
+
+### Features
+
+* **prompts:** allow commits unrelated to JIRA issues ([5152d9e](https://github.com/EndemolShineGroup/cz-jira-smart-commit/commit/5152d9e))
+
 # [1.1.0](https://github.com/EndemolShineGroup/cz-jira-smart-commit/compare/v1.0.0...v1.1.0) (2018-10-11)
 
 
