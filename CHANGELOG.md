@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/EndemolShineGroup/cz-jira-smart-commit/compare/v1.2.0...v1.3.0) (2018-11-02)
+
+
+### Features
+
+* **validation:** improve commit header validation ([4423059](https://github.com/EndemolShineGroup/cz-jira-smart-commit/commit/4423059)), closes [#3](https://github.com/EndemolShineGroup/cz-jira-smart-commit/issues/3)
+
 # [1.2.0](https://github.com/EndemolShineGroup/cz-jira-smart-commit/compare/v1.1.0...v1.2.0) (2018-10-15)
 
 
