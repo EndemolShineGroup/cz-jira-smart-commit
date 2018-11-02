@@ -4,14 +4,14 @@ import { Answers } from 'inquirer';
 import compact from 'lodash.compact';
 import wrap from 'word-wrap';
 
-export default function formatCommit(answers: Answers) {
-  const wrapOptions = {
-    indent: '',
-    newline: '\n',
-    trim: true,
-    width: 80,
-  };
+const wrapOptions = {
+  indent: '',
+  newline: '\n',
+  trim: true,
+  width: 80,
+};
 
+export default function formatCommit(answers: Answers) {
   const {
     body,
     isIssueAffected = true,

@@ -4,10 +4,11 @@
     "declaration": true,
     "esModuleInterop": true,
     "lib": [
-      "ES2015"
+      "es2015"
     ],
     "module": "commonjs",
     "outDir": "./dist",
+    "resolveJsonModule": true,
     "rootDir": "./src",
     "sourceMap": true,
     "strict": true,

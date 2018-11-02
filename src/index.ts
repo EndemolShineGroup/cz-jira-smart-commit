@@ -1,9 +1,9 @@
-import createPrompts from './createPrompts';
-import formatCommit from './formatCommit';
-import { CommitizenConfig, Prompter } from './types';
-import { loadConfig } from './util';
+import createPrompts from './lib/createPrompts';
+import formatCommit from './lib/formatCommit';
+import { CommitizenConfig, Prompter } from './lib/types';
+import { loadConfig } from './lib/util';
 
-import pkg from '../package.json';
+const pkg = require('../package.json');
 
 let config: CommitizenConfig;
 try {

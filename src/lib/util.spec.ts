@@ -33,7 +33,7 @@ describe('#findLongest', () => {
 
 describe('#loadConfig', () => {
   it('loads a Commitizen config file from the current working directory', () => {
-    process.chdir(path.join(__dirname, '..'));
+    process.chdir(path.join(__dirname, '..', '..'));
     const result = loadConfig();
     expect(result).toEqual({
       path: '@endemolshinegroup/cz-github',
@@ -41,7 +41,7 @@ describe('#loadConfig', () => {
   });
 
   it('loads a Commitizen config file from a given path', () => {
-    const result = loadConfig(path.join(__dirname, '..'));
+    const result = loadConfig(path.join(__dirname, '..', '..'));
     expect(result).toEqual({
       path: '@endemolshinegroup/cz-github',
     });
