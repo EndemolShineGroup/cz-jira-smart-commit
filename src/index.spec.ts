@@ -1,7 +1,7 @@
 import { Inquirer } from 'inquirer';
 
 import { prompter } from '.';
-import { CommitCallback } from './types';
+import { CommitCallback } from './lib/types';
 
 import * as FIXTURE from './__fixtures__/commitAnswers';
 
