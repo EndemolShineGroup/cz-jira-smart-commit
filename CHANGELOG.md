@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/EndemolShineGroup/cz-jira-smart-commit/compare/v1.3.0...v1.3.1) (2018-11-03)
+
+
+### Bug Fixes
+
+* **validation:** only check if first word of subject is lowercase ([0a194f8](https://github.com/EndemolShineGroup/cz-jira-smart-commit/commit/0a194f8))
+
 # [1.3.0](https://github.com/EndemolShineGroup/cz-jira-smart-commit/compare/v1.2.0...v1.3.0) (2018-11-02)
 
 
