@@ -1,4 +1,4 @@
-# @endemolshinegroup/cz-jira-smart-commit
+![Banner][icon-banner]
 
 [![MIT Licensed][icon-license]][link-license]
 [![NPM Version][icon-npm]][link-npm]
@@ -53,6 +53,8 @@ The adapter can be customised by specifying additional options in `.czrc`:
   }
 }
 ```
+
+[icon-banner]: docs/assets/banner.png
 
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/cz-jira-smart-commit.svg?longCache=true&style=flat-square
 [link-license]: LICENSE
