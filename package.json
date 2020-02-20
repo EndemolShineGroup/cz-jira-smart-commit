@@ -44,7 +44,7 @@
     "lodash.max": "^4.0.1",
     "lodash.padend": "^4.6.1",
     "word-wrap": "^1.2.3",
-    "tslib": "^1.9.3"
+    "tslib": "^1.11.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^7",
