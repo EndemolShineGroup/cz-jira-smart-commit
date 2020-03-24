@@ -68,7 +68,7 @@
     "commitizen": "^3.0.2",
     "husky": "^1.1.1",
     "jest": "^23",
-    "lint-staged": "^8.0.0",
+    "lint-staged": "^10.0.9",
     "lodash.find": "^4.6.0",
     "prettier": "^1",
     "rimraf": "^2",
